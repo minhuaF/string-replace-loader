@@ -1,5 +1,5 @@
 {
-  "name": "string-replace-loader",
+  "name": "@miwa/string-replace-loader",
   "version": "0.0.1",
   "description": "To replace constants string in your config",
   "main": "index.js",

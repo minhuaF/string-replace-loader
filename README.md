@@ -1,4 +1,4 @@
-# string-replace-loader
+# @miwa/string-replace-loader
 > 一个webpack loader插件，根据配置文件直接替换常量文本，避免多次import常量文件，减少`main.js`的大小，方便常量统一管理以及区分环境使用不同的常量。
 
 ## Params
@@ -10,7 +10,7 @@
 
 配置
 ```
-npm i string-transtion-loader --save-dev
+npm i @miwa/string-transtion-loader --save-dev
 ```
 
 webpack.config.js
@@ -20,10 +20,10 @@ webpack.config.js
   use: [
     {
       {
-        loader: 'string-loader-loader',
+        loader: '@miwa/string-loader-loader',
         options: {
           changeTemp: require('~/constConfig.js'),   // 所在的配置文件
-          changeRules: /\<\{(.+?)\}\>/g        //匹配的规则
+          changeRules: /\<\{(.+?)\}\>/g        //全局匹配的正则表达式
         }
       }
     }
@@ -41,4 +41,9 @@ module.exports = {
 使用的文件
 ```
 let url = '<{LOGINURL}>'
+```
+
+编译后的文件
+```
+let url = '/data/login.do'
 ```
